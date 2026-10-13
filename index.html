@@ -1,87 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#8b5cf6">
-<meta name="description" content="MVN STORE — layanan flashing HP, server VPN premium, pulsa, TV prabayar, dan informasi aset digital.">
-<title>MVN STORE 🐾 | Layanan Digital</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080b2a">
+<meta name="description" content="MVN STORE — layanan digital, flashing HP, server VPN premium, proxy premium semua negara, pulsa, TV prabayar, dan aset crypto.">
+<title>MVN STORE — Solusi Digital</title>
 <style>
-:root{--bg:#fff9ff;--surface:rgba(255,255,255,.88);--text:#24143b;--muted:#6b607b;--line:rgba(124,58,237,.18);--shadow:0 18px 50px rgba(89,42,160,.13)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);transition:background .3s,color .3s;overflow-x:hidden}
-body.dark{--bg:#100d1d;--surface:rgba(31,24,49,.9);--text:#f8f3ff;--muted:#c0b4d4;--line:rgba(216,180,254,.2);--shadow:0 18px 50px rgba(0,0,0,.28)}
-body:before{content:"";position:fixed;inset:0;z-index:-2;background:linear-gradient(125deg,#ff7eb3,#ffb86b,#fff275,#79f2c0,#70d6ff,#a78bfa,#ff8bd1);background-size:300% 300%;animation:rainbow 18s ease infinite;opacity:.24}
-body.dark:before{opacity:.13}@keyframes rainbow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.wrap{width:min(1120px,92%);margin:auto}
-header{position:sticky;top:0;z-index:20;backdrop-filter:blur(18px);background:var(--surface);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 0}.brand{display:flex;align-items:center;gap:10px;font-weight:950;letter-spacing:.5px;font-size:1.08rem}.paw{width:43px;height:43px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,#ff63b5,#8b5cf6,#20c9ff);box-shadow:0 8px 20px #a855f744;font-size:24px}
-.navlinks{display:flex;align-items:center;gap:18px;color:var(--muted);font-size:.92rem}.navlinks a:hover{color:#a855f7}.iconbtn{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:13px;padding:10px 12px;cursor:pointer;font-weight:800}
-.hero{padding:70px 0 42px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:35px}.eyebrow{display:inline-flex;gap:8px;align-items:center;padding:8px 13px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--muted);font-size:.82rem;font-weight:750}.dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 5px #22c55e22}
-h1{font-size:clamp(2.6rem,6vw,5rem);line-height:1.02;letter-spacing:-2.7px;margin:19px 0}.gradient{background:linear-gradient(100deg,#f43f9b,#8b5cf6,#0891b2);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{font-size:1.08rem;line-height:1.75;color:var(--muted);max-width:590px}.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.btn{display:inline-flex;justify-content:center;align-items:center;gap:9px;border:0;border-radius:15px;padding:13px 18px;font-weight:850;cursor:pointer;transition:transform .2s}.btn:hover{transform:translateY(-2px)}.primary{color:white;background:linear-gradient(100deg,#f43f9b,#8b5cf6,#0ea5e9);box-shadow:0 10px 25px #8b5cf633}.secondary{background:var(--surface);border:1px solid var(--line);color:var(--text)}
-.hero-art{position:relative;min-height:330px;display:grid;place-items:center}.orb{width:min(310px,75vw);aspect-ratio:1;border-radius:34% 66% 60% 40%/43% 35% 65% 57%;background:linear-gradient(135deg,#ff8ac5,#b69cff,#71ddff,#83f4c4);animation:float 7s ease-in-out infinite;box-shadow:0 25px 80px #8b5cf744;display:grid;place-items:center;transform:rotate(-8deg)}.orb span{font-size:clamp(6rem,17vw,10rem);filter:drop-shadow(0 10px 5px #5b21b455);transform:rotate(8deg)}.float-card{position:absolute;padding:12px 15px;border-radius:16px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);font-weight:850;backdrop-filter:blur(10px)}.fc1{top:22px;left:2%}.fc2{right:0;bottom:40px}.fc3{left:0;bottom:8px}@keyframes float{50%{transform:translateY(-12px) rotate(4deg) scale(1.02)}}
-section{padding:44px 0}.section-head{text-align:center;max-width:680px;margin:0 auto 28px}.section-head h2{font-size:clamp(1.8rem,4vw,2.7rem);margin:0 0 10px;letter-spacing:-1px}.section-head p{color:var(--muted);line-height:1.7;margin:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.service{background:var(--surface);border:1px solid var(--line);border-radius:23px;padding:23px;box-shadow:var(--shadow);transition:transform .2s,border-color .2s}.service:hover{transform:translateY(-5px);border-color:#c084fc}.service-icon{width:54px;height:54px;display:grid;place-items:center;border-radius:17px;font-size:26px;margin-bottom:16px;background:linear-gradient(135deg,#ffd1e8,#d9c8ff,#b8f0ff)}.service h3{margin:0 0 9px;font-size:1.1rem}.service p{color:var(--muted);line-height:1.65;font-size:.94rem;margin:0 0 17px}.order{display:inline-flex;align-items:center;gap:7px;font-weight:850;color:#a855f7}
-.banner{padding:27px;border-radius:26px;background:linear-gradient(110deg,#f472b6,#a78bfa,#38bdf8);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:18px;box-shadow:0 20px 45px #8b5cf733}.banner h2{margin:0 0 7px;font-size:1.65rem}.banner p{margin:0;opacity:.92;line-height:1.6}.banner .btn{background:white;color:#6d28d9;white-space:nowrap}
-.note{font-size:.85rem;color:var(--muted);line-height:1.65;margin-top:18px}.contact{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}.contact-card{padding:27px;background:var(--surface);border:1px solid var(--line);border-radius:24px}.contact-card h3{margin-top:0}.contact-card p{color:var(--muted);line-height:1.7}.field{width:100%;padding:13px 14px;margin:6px 0 12px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit}.field:focus{outline:2px solid #a78bfa}.small{font-size:.8rem;color:var(--muted)}footer{padding:28px 0 35px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.pawprint{color:#ec4899}
-@media(max-width:800px){.navlinks{display:none}.hero{grid-template-columns:1fr;padding-top:48px;gap:4px}.hero-art{min-height:290px}.grid{grid-template-columns:repeat(2,1fr)}.contact{grid-template-columns:1fr}}
-@media(max-width:520px){.grid{grid-template-columns:1fr}.hero{padding-top:38px}h1{letter-spacing:-1.6px}.banner{align-items:flex-start;flex-direction:column}.banner .btn{width:100%}.hero-art{min-height:260px}.float-card{font-size:.85rem}.fc1{top:8px}.fc2{bottom:24px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+:root{--bg:#070a20;--panel:rgba(14,22,57,.88);--text:#f8faff;--muted:#c7d2f7;--line:rgba(108,220,255,.42);--shadow:0 12px 34px #0005;--rainbow:linear-gradient(110deg,#ff3cac,#784bff,#00d9ff,#00f5a0,#ffe45e,#ff7a30)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--text);background:radial-gradient(ellipse at 15% 5%,#3b1268 0,transparent 30%),radial-gradient(ellipse at 85% 30%,#063d65 0,transparent 32%),var(--bg);transition:background .3s,color .3s;overflow-x:hidden}
+body.day{--bg:#f4f7ff;--panel:rgba(255,255,255,.9);--text:#17173b;--muted:#4b5478;--line:rgba(83,87,200,.28);--shadow:0 12px 30px #2222;background:radial-gradient(ellipse at 10% 5%,#ffd8f3 0,transparent 32%),radial-gradient(ellipse at 85% 30%,#c8f6ff 0,transparent 34%),var(--bg)}
+a{color:inherit;text-decoration:none}.rainbow-line{height:5px;background:var(--rainbow);background-size:250% 100%;animation:flow 7s linear infinite}@keyframes flow{to{background-position:250% 0}}
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{max-width:1160px;margin:auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:10px;font-weight:950;letter-spacing:.6px;font-size:1.35rem}.paw{width:43px;height:43px;display:grid;place-items:center;border-radius:15px;background:var(--rainbow);box-shadow:0 0 24px #b347ff77;font-size:25px}.brand span:last-child{background:var(--rainbow);background-clip:text;color:transparent}.links{display:flex;gap:22px;align-items:center;font-size:.92rem;color:var(--muted)}.links a:hover{color:#00cfff}.toggle,.menu-btn{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:999px;padding:10px 14px;font-weight:750;cursor:pointer}.menu-btn{display:none}
+main{max-width:1160px;margin:auto;padding:0 22px}.hero{position:relative;margin:28px 0 54px;min-height:380px;padding:clamp(28px,6vw,68px);border:1px solid #b66bff88;border-radius:32px;overflow:hidden;background:linear-gradient(125deg,#120b3eeb,#082b56e8 60%,#14205be8);box-shadow:0 0 45px #792cff26}.day .hero{background:linear-gradient(125deg,#ffe1f5,#dff5ff 60%,#e8e2ff);color:#17173b}.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;filter:blur(2px);pointer-events:none}.hero:before{width:280px;height:280px;right:-50px;top:-85px;border:2px solid #00eaff;box-shadow:0 0 0 15px #7c36ff22,0 0 0 32px #ff43bd20}.hero:after{width:190px;height:190px;right:70px;bottom:-130px;border:2px solid #ff3cac;box-shadow:0 0 0 16px #00d9ff22}
+.hero-content{position:relative;z-index:1;max-width:690px}.eyebrow{display:inline-flex;gap:8px;align-items:center;padding:8px 13px;border:1px solid #00d9ff88;border-radius:999px;font-size:.85rem;color:#5cecff;background:#00d9ff0d}.day .eyebrow{color:#3b38b6}.hero h1{font-size:clamp(2.35rem,6vw,4.8rem);line-height:1.02;margin:20px 0 14px;letter-spacing:-2px}.gradient-text{background:var(--rainbow);background-clip:text;color:transparent}.hero p{max-width:590px;font-size:1.08rem;line-height:1.7;color:var(--muted)}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.btn{display:inline-flex;justify-content:center;align-items:center;gap:9px;padding:13px 20px;border-radius:999px;font-weight:850;border:0;cursor:pointer;transition:transform .2s,box-shadow .2s}.btn:hover{transform:translateY(-3px);box-shadow:0 10px 25px #0003}.primary{background:var(--rainbow);color:#10102a}.secondary{border:1px solid var(--line);background:var(--panel);color:var(--text)}.hero-paw{position:absolute;right:6%;top:22%;font-size:clamp(6rem,17vw,12rem);transform:rotate(-12deg);filter:drop-shadow(0 0 25px #ff3cacaa);opacity:.95}
+.section{margin:54px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:20px}.section h2{font-size:clamp(1.7rem,4vw,2.4rem);margin:0;letter-spacing:-.7px}.section-head p{margin:8px 0 0;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.service{position:relative;overflow:hidden;padding:22px;border-radius:23px;background:var(--panel);border:1px solid var(--line);box-shadow:var(--shadow);transition:transform .22s,border-color .22s}.service:before{content:"";height:4px;position:absolute;inset:0 0 auto;background:var(--rainbow)}.service:hover{transform:translateY(-5px);border-color:#e45dff}.service-icon{width:58px;height:58px;display:grid;place-items:center;border-radius:18px;font-size:1.9rem;background:linear-gradient(135deg,#ff3cac33,#00d9ff33);border:1px solid var(--line)}
+.proxy-logo{width:58px;height:58px;display:grid;place-items:center;border-radius:18px;font-size:1.7rem;font-weight:950;color:#fff;background:#e11d48;border:2px solid #ff647c;box-shadow:0 0 12px #ef444488;animation:proxyBlink .85s steps(2,end) infinite}
+@keyframes proxyBlink{0%,100%{background:#e11d48;border-color:#fb7185;box-shadow:0 0 13px #ef4444aa}50%{background:#16a34a;border-color:#86efac;box-shadow:0 0 16px #22c55eaa}}
+@media(prefers-reduced-motion:reduce){.proxy-logo{animation:none}}.service h3{margin:16px 0 8px;font-size:1.16rem}.service p{margin:0 0 17px;color:var(--muted);line-height:1.6;font-size:.95rem}.service .small-link{font-weight:800;color:#00cfff}.wide-card{display:grid;grid-template-columns:1fr 1fr;gap:18px}.feature{padding:23px;border-radius:23px;background:var(--panel);border:1px solid var(--line);display:flex;gap:15px;align-items:flex-start}.feature .emoji{font-size:2rem}.feature p{margin:7px 0 0;color:var(--muted);line-height:1.55}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.step{padding:20px;border-radius:20px;background:var(--panel);border:1px solid var(--line)}.step b{display:block;margin:8px 0}.step .num{font-size:1.4rem;font-weight:950;color:#ff54c8}.contact{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:clamp(24px,5vw,42px);border-radius:28px;background:var(--rainbow);color:#11112e}.contact h2{margin:0 0 8px;font-size:clamp(1.6rem,4vw,2.3rem)}.contact p{margin:0;max-width:600px;line-height:1.6}.contact .btn{background:#11112e;color:white;white-space:nowrap}.note{font-size:.85rem;color:var(--muted);line-height:1.6;margin-top:15px}footer{margin-top:60px;border-top:1px solid var(--line);padding:28px 22px 36px;color:var(--muted)}.footer-inner{max-width:1160px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer-inner strong{color:var(--text)}.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:6px 10px;margin:4px;font-size:.8rem}
+@media(max-width:780px){.links{display:none;position:absolute;left:12px;right:12px;top:70px;padding:18px;border-radius:18px;background:var(--panel);border:1px solid var(--line);flex-direction:column;align-items:flex-start}.links.open{display:flex}.menu-btn{display:block}.nav{padding:11px 15px}.hero{margin-top:18px}.hero-paw{right:-8px;top:auto;bottom:0;font-size:7rem;opacity:.28}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.wide-card,.steps{grid-template-columns:1fr}.contact{align-items:flex-start;flex-direction:column}}
+@media(max-width:480px){main{padding:0 14px}.brand{font-size:1.1rem}.paw{width:38px;height:38px}.toggle{padding:9px 11px}.grid{grid-template-columns:1fr}.service{padding:20px}.hero{padding:27px 21px;border-radius:24px}.hero h1{letter-spacing:-1px}.section{margin:42px 0}.section-head{align-items:flex-start;flex-direction:column}}
+
+/* Jam & tanggal mini untuk header MVN STORE */
+.clock-mini{display:flex;flex-direction:column;justify-content:center;align-items:center;min-width:112px;padding:6px 10px;border:1px solid var(--line);border-radius:9px;background:linear-gradient(120deg,#7c3aed,#ec4899,#06b6d4);color:#fff;box-shadow:0 3px 12px #0002;line-height:1.2;text-align:center;flex-shrink:0}
+.clock-mini .clock-time{font-size:16px;font-weight:850;letter-spacing:.5px;font-variant-numeric:tabular-nums}
+.clock-mini .clock-date{font-size:9px;font-weight:650;margin-top:3px;white-space:nowrap}
+@media(max-width:560px){.clock-mini{min-width:94px;padding:5px 7px}.clock-mini .clock-time{font-size:14px}.clock-mini .clock-date{font-size:8px}.nav{gap:8px;padding:10px 12px}.brand{font-size:1rem}.paw{width:35px;height:35px;font-size:21px}.toggle{padding:8px 9px;font-size:.75rem}}
+
 </style>
 </head>
 <body>
-<header><div class="wrap nav">
-  <a class="brand" href="#home"><span class="paw" aria-hidden="true">🐾</span><span>MVN <span class="gradient">STORE</span></span></a>
-  <nav class="navlinks"><a href="#layanan">Layanan</a><a href="#tentang">Tentang</a><a href="#kontak">Kontak</a></nav>
-  <button class="iconbtn" id="themeToggle" aria-label="Ganti mode">🌙 Mode malam</button>
-</div></header>
-<main id="home">
-<div class="wrap hero"><div>
-  <span class="eyebrow"><span class="dot"></span> Layanan digital & teknologi</span>
-  <h1>Semua kebutuhan digitalmu di <span class="gradient">satu tempat.</span></h1>
-  <p>Selamat datang di MVN STORE! Mulai dari layanan flashing HP, server VPN premium, pulsa, TV prabayar, hingga informasi transaksi aset digital — praktis, ramah, dan mudah ditanyakan.</p>
-  <div class="buttons"><a class="btn primary" href="https://wa.me/6287841082704?text=Halo%20Admin%20MVN%20STORE%2C%20saya%20ingin%20bertanya%20tentang%20layanan.">💬 Hubungi Admin</a><a class="btn secondary" href="#layanan">✨ Lihat Layanan</a></div>
-</div><div class="hero-art" aria-label="Ilustrasi pelangi dan kaki kucing"><div class="orb"><span>🐾</span></div><div class="float-card fc1">🌈 Welcome</div><div class="float-card fc2">⚡ Cepat & praktis</div><div class="float-card fc3"> MVN STORE</div></div></div>
-<section id="layanan"><div class="wrap"><div class="section-head"><h2>Layanan <span class="gradient">MVN STORE</span></h2><p>Pilih kebutuhanmu, lalu hubungi admin untuk cek harga, ketersediaan, dan ketentuan layanan.</p></div>
+<div class="rainbow-line"></div>
+<header><nav class="nav" aria-label="Navigasi utama">
+<a class="brand" href="#beranda" aria-label="MVN STORE beranda"><span class="paw">🐾</span><span>MVN STORE</span></a>
+<div class="links" id="navLinks"><a href="#beranda">Beranda</a><a href="#layanan">Layanan</a><a href="#cara">Cara Pesan</a><a href="#kontak">Kontak</a></div>
+<div style="display:flex;gap:8px;align-items:center"><div class="clock-mini" aria-label="Jam dan tanggal otomatis"><div class="clock-time" id="mvnClockTime">00:00:00</div><div class="clock-date" id="mvnClockDate">Memuat tanggal...</div></div><button class="toggle" id="themeToggle" aria-label="Ganti mode">☀️ Mode Siang</button><button class="menu-btn" id="menuBtn" aria-label="Buka menu">☰</button></div>
+</nav></header>
+<main>
+<section class="hero" id="beranda"><div class="hero-content">
+<div class="eyebrow">🐾 Halo, selamat datang di toko kami!</div>
+<h1>Solusi Digital<br><span class="gradient-text">Serba Ada.</span></h1>
+<p>Mulai dari layanan HP, server VPN premium, pulsa, TV prabayar, hingga aset crypto. Satu tempat untuk kebutuhan digitalmu !</p>
+<div class="actions"><a class="btn primary" href="#layanan">Jelajahi Layanan <span>↗</span></a><a class="btn secondary" href="#kontak">💬 Hubungi Kami</a></div>
+</div><div class="hero-paw" aria-hidden="true">🐾</div></section>
+
+<section class="section" id="layanan"><div class="section-head"><div><h2>🐾 Layanan <span class="gradient-text">MVN STORE</span></h2><p>Pilih kebutuhanmu, lalu hubungi admin untuk detail dan harga.</p></div></div>
 <div class="grid">
-<article class="service"><div class="service-icon">📱</div><h3>Flashing & Servis HP</h3><p>Bantuan flashing, lupa pola, UBL terkunci, Mi Cloud, dan kendala software Android lainnya. Penanganan mengikuti model perangkat serta bukti kepemilikan.</p><a class="order wa-order" data-service="Flashing & Servis HP" href="#">Tanya layanan ↗</a></article>
-<article class="service"><div class="service-icon">🛡️</div><h3>Server VPN Premium</h3><p>Informasi paket server VPN premium, masa aktif, lokasi server, dan panduan konfigurasi sesuai kebutuhan.</p><a class="order wa-order" data-service="Server VPN Premium" href="#">Tanya paket ↗</a></article>
-<article class="service"><div class="service-icon">📶</div><h3>Pulsa & Paket Data</h3><p>Isi pulsa dan paket data berbagai operator. Konfirmasi nomor tujuan dan nominal sebelum transaksi.</p><a class="order wa-order" data-service="Pulsa & Paket Data" href="#">Pesan pulsa ↗</a></article>
-<article class="service"><div class="service-icon">📺</div><h3>TV Prabayar</h3><p>Bantuan pembelian voucher atau isi ulang layanan TV prabayar yang tersedia.</p><a class="order wa-order" data-service="TV Prabayar" href="#">Tanya voucher ↗</a></article>
-<article class="service"><div class="service-icon">₮</div><h3>Aset Digital / USDT</h3><p>Tanyakan dukungan transaksi aset digital seperti USDT dan token lain yang tersedia. Pastikan jaringan, alamat, biaya, dan nominal sebelum mengirim dana.</p><a class="order wa-order" data-service="Aset Digital / USDT" href="#">Tanya transaksi ↗</a></article>
-<article class="service"><div class="service-icon">🐱</div><h3>Bantuan Teknologi</h3><p>Belum yakin layanan yang cocok? Ceritakan kebutuhanmu kepada admin untuk mendapat informasi awal.</p><a class="order wa-order" data-service="Bantuan Teknologi" href="#">Konsultasi ↗</a></article>
-</div></div></section>
-<section id="tentang"><div class="wrap"><div class="banner"><div><h2>Teknologi jadi lebih mudah 🌈</h2><p>MVN STORE — satu tempat untuk kebutuhan servis dan layanan digitalmu.</p></div><a class="btn" href="https://wa.me/6287841082704?text=Halo%20Admin%20MVN%20STORE%2C%20saya%20ingin%20bertanya.">Hubungi sekarang ↗</a></div><p class="note">Catatan: perbaikan perangkat dilakukan dengan bukti kepemilikan. Untuk aset kripto, pastikan legalitas penyedia, jaringan, alamat, dan biaya sebelum transaksi. MVN STORE tidak meminta seed phrase atau private key.</p></div></section>
-<section id="kontak"><div class="wrap"><div class="section-head"><h2>Yuk, <span class="gradient">hubungi admin</span></h2><p>Isi kebutuhanmu, lalu pesan akan disiapkan langsung untuk WhatsApp admin MVN STORE.</p></div>
-<div class="contact"><div class="contact-card"><h3>💌 Pesan untuk admin</h3>
-<label for="custName">Nama panggilan</label><input class="field" id="custName" placeholder="Nama kamu">
-<label for="serviceChoice">Pilih layanan</label><select class="field" id="serviceChoice"><option>Flashing & Servis HP</option><option>Server VPN Premium</option><option>Pulsa & Paket Data</option><option>TV Prabayar</option><option>Aset Digital / USDT</option><option>Bantuan Teknologi</option></select>
-<label for="message">Detail kebutuhan</label><textarea class="field" id="message" rows="3" placeholder="Ceritakan kebutuhanmu..."></textarea>
-<button class="btn primary" id="sendBtn" type="button">💬 Kirim lewat WhatsApp</button></div>
-<div class="contact-card"><h3>🐾 MVN STORE</h3><p>Pelayanan digital dengan tampilan ceria</p><p>📱 WhatsApp Admin<br><strong>+62 878-4108-2704</strong></p><a class="btn secondary" target="_blank" rel="noopener" href="https://wa.me/6287841082704?text=Halo%20Admin%20MVN%20STORE">Buka WhatsApp ↗</a><p class="small">Klik tombol untuk mulai chat dengan admin.</p></div></div></div></section>
+<article class="service"><div class="service-icon">📱</div><h3>Flashing & Servis HP</h3><p>Flashing firmware, instal ulang sistem, bantuan bootloop, root dan custom ROM sesuai tipe perangkat.</p><a class="small-link order-link" data-service="Flashing & Servis HP" href="#kontak">Tanya layanan ↗</a></article>
+<article class="service"><div class="service-icon">🔐</div><h3>Lupa Pola / Password</h3><p>Konsultasi pemulihan akses perangkat. Penanganan dilakukan dengan bukti kepemilikan dan prosedur resmi.</p><a class="small-link order-link" data-service="Lupa Pola / Password" href="#kontak">Tanya layanan ↗</a></article>
+<article class="service"><div class="service-icon">🔓</div><h3>UBL Terkunci</h3><p>Bantuan konsultasi bootloader dan pengecekan opsi yang sesuai untuk model HP kamu.</p><a class="small-link order-link" data-service="UBL Terkunci" href="#kontak">Tanya layanan ↗</a></article>
+<article class="service"><div class="service-icon">☁️</div><h3>Mi Cloud & Akun</h3><p>Bantuan pemulihan akun dan panduan resmi. Kami tidak melayani bypass keamanan tanpa otorisasi pemilik.</p><a class="small-link order-link" data-service="Mi Cloud & Akun" href="#kontak">Tanya layanan ↗</a></article>
+<article class="service"><div class="service-icon">🌐</div><h3>Server VPN Premium</h3><p>Paket server VPN premium untuk koneksi pribadi. Tanyakan lokasi server, masa aktif, dan spesifikasi paket.</p><a class="small-link order-link" data-service="Server VPN Premium" href="#kontak">Tanya layanan ↗</a></article>
+<article class="service"><div class="proxy-logo" aria-label="Logo proxy merah hijau berkedip">PX</div><h3>Proxy Premium All Negara</h3><p>Proxy premium dengan pilihan lokasi negara sesuai ketersediaan. Tanyakan jenis proxy, lokasi, masa aktif, dan harga kepada admin.</p><a class="small-link order-link" data-service="Proxy Premium All Negara" href="#kontak">Tanya proxy ↗</a></article>
+<article class="service"><div class="service-icon">📶</div><h3>Pulsa & Paket Data</h3><p>Isi pulsa dan paket data berbagai operator. Ketersediaan produk serta harga dikonfirmasi admin.</p><a class="small-link order-link" data-service="Pulsa & Paket Data" href="#kontak">Tanya layanan ↗</a></article>
+<article class="service"><div class="service-icon">📺</div><h3>TV Prabayar</h3><p>Layanan isi ulang TV prabayar dan paket pilihan sesuai penyedia layanan yang tersedia.</p><a class="small-link order-link" data-service="TV Prabayar" href="#kontak">Tanya layanan ↗</a></article>
+<article class="service"><div class="service-icon">🪙</div><h3>Crypto: USDT & Lainnya</h3><p>Konsultasi transaksi aset digital seperti USDT dan aset lain yang didukung. Periksa jaringan, alamat, dan biaya sebelum transaksi.</p><a class="small-link order-link" data-service="Crypto USDT dan aset digital" href="#kontak">Tanya layanan ↗</a></article>
+<article class="service"><div class="service-icon">✨</div><h3>Layanan Digital Lainnya</h3><p>Punya kebutuhan lain? Kirim detailnya dan admin akan membantu mengecek apakah layanan tersedia.</p><a class="small-link order-link" data-service="Layanan digital lainnya" href="#kontak">Tanya layanan ↗</a></article>
+</div>
+<p class="note">Catatan: transaksi crypto memiliki risiko harga, jaringan, dan pengiriman. Pastikan mematuhi aturan yang berlaku dan selalu verifikasi alamat serta jaringan. Harga, ketersediaan, dan estimasi pengerjaan dikonfirmasi sebelum pembayaran.</p>
+</section>
+
+<section class="section"><div class="section-head"><div><h2>Kenapa pilih <span class="gradient-text">MVN STORE?</span></h2><p>Komunikasi jelas dari awal sampai layanan selesai.</p></div></div>
+<div class="wide-card">
+<div class="feature"><div class="emoji">⚡</div><div><strong>Responsif & jelas</strong><p>Admin mengonfirmasi kebutuhan, harga, dan estimasi sebelum pesanan diproses.</p></div></div>
+<div class="feature"><div class="emoji">🛡️</div><div><strong>Utamakan keamanan</strong><p>Data sensitif jangan dibagikan di chat. Untuk layanan perangkat, siapkan bukti kepemilikan jika dibutuhkan.</p></div></div>
+<div class="feature"><div class="emoji">🌈</div><div><strong>Banyak pilihan</strong><p>Layanan perangkat, konektivitas, isi ulang, dan konsultasi aset digital dalam satu toko.</p></div></div>
+<div class="feature"><div class="emoji">🐾</div><div><strong>Admin siap membantu</strong><p>Jelaskan tipe perangkat atau produk yang dicari agar kami bisa mengecek ketersediaannya.</p></div></div>
+</div></section>
+
+<section class="section" id="cara"><div class="section-head"><div><h2>3 langkah mudah</h2><p>Pesan layanan tanpa bingung.</p></div></div><div class="steps">
+<div class="step"><span class="num">01</span><b>Pilih layanan</b><span style="color:var(--muted)">Tentukan layanan dan siapkan detail yang diperlukan.</span></div>
+<div class="step"><span class="num">02</span><b>Chat admin</b><span style="color:var(--muted)">Konfirmasi harga, ketersediaan, dan estimasi pengerjaan.</span></div>
+<div class="step"><span class="num">03</span><b>Konfirmasi pesanan</b><span style="color:var(--muted)">Lanjutkan setelah detail pesanan dan ketentuan disepakati.</span></div>
+</div></section>
+
+<section class="section" id="kontak"><div class="contact"><div><h2>Yuk, konsultasi sekarang! 🐾</h2><p>Ceritakan kebutuhanmu kepada admin MVN STORE. Klik tombol WhatsApp untuk memulai chat.</p></div><a class="btn" id="whatsappBtn" href="https://wa.me/6287841082704" target="_blank" rel="noopener">💬 Chat WhatsApp</a></div>
+<p class="note">Nomor WhatsApp admin MVN STORE: <b>6287841082704</b>.</p></section>
 </main>
-<footer><div class="wrap foot"><span><span class="pawprint">🐾</span> © <span id="year"></span> MVN STORE. All rights reserved.</span><span> X -One32🌈</span></div></footer>
+<footer><div class="rainbow-line" style="margin-bottom:25px;border-radius:999px"></div><div class="footer-inner"><div><strong>🐾 MVN STORE</strong><p>Solusi digital  🌈</p></div><div>© <span id="year"></span> MVN STORE · Cepat • Jelas • Terpercaya</div></div></footer>
 <script>
-const ADMIN_WA = "6287841082704";
-const body = document.body;
-const toggle = document.getElementById("themeToggle");
-function setTheme(dark){
-  body.classList.toggle("dark", dark);
-  toggle.textContent = dark ? "☀️ Mode siang" : "🌙 Mode malam";
-  toggle.setAttribute("aria-label", dark ? "Aktifkan mode siang" : "Aktifkan mode malam");
-}
-setTheme(false);
-toggle.addEventListener("click",()=>setTheme(!body.classList.contains("dark")));
-document.getElementById("year").textContent = new Date().getFullYear();
-function waUrl(message){return "https://wa.me/"+ADMIN_WA+"?text="+encodeURIComponent(message);}
-document.querySelectorAll(".wa-order").forEach(link=>{
-  link.href=waUrl("Halo Admin MVN STORE, saya ingin bertanya tentang layanan: "+link.dataset.service+". Mohon info harga dan ketersediaannya.");
-  link.target="_blank"; link.rel="noopener";
-});
-document.getElementById("sendBtn").addEventListener("click",()=>{
-  const name=document.getElementById("custName").value.trim()||"Pelanggan";
-  const service=document.getElementById("serviceChoice").value;
-  const detail=document.getElementById("message").value.trim()||"Saya ingin bertanya tentang layanan ini.";
-  window.open(waUrl("Halo Admin MVN STORE, saya "+name+".\nLayanan: "+service+".\nDetail: "+detail),"_blank","noopener");
-});
+const body=document.body,themeToggle=document.getElementById('themeToggle');
+function setTheme(day){body.classList.toggle('day',day);themeToggle.textContent=day?'🌙 Mode Malam':'☀️ Mode Siang';themeToggle.setAttribute('aria-pressed',String(day));}
+themeToggle.addEventListener('click',()=>setTheme(!body.classList.contains('day')));
+document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+document.getElementById('year').textContent=new Date().getFullYear();
+document.querySelectorAll('.order-link').forEach(a=>a.addEventListener('click',()=>{const service=a.dataset.service;const number='6287841082704';a.href='https://wa.me/'+number+'?text='+encodeURIComponent('Halo MVN STORE, saya ingin bertanya tentang '+service+'. Mohon info harga dan ketersediaannya.');a.target='_blank';a.rel='noopener';}));
+
+function updateMvnClock(){const now=new Date();const t=document.getElementById('mvnClockTime');const d=document.getElementById('mvnClockDate');if(!t||!d)return;t.textContent=new Intl.DateTimeFormat('id-ID',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(now);d.textContent=new Intl.DateTimeFormat('id-ID',{weekday:'short',day:'2-digit',month:'short',year:'numeric'}).format(now)}
+updateMvnClock();setInterval(updateMvnClock,1000);
 </script>
 </body>
-</html>
+  </html>
