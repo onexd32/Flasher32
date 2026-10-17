@@ -5,8 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080d12">
-<title>X-ONE32 | ROOT ANDROID & CUSTOM ROM</title>
-
+<title>X-ONE32 | ROOT ANDROID</title>
 <style>
 :root {
   --bg:#080d12;
@@ -18,18 +17,18 @@
 }
 body.light {
   --bg:#eef5f3;
-  --panel:#ffffff;
+  --panel:#fff;
   --text:#15221e;
   --muted:#566861;
 }
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
 body {
   margin:0;
   background:var(--bg);
   color:var(--text);
-  font-family:Arial,Helvetica,sans-serif;
-  transition:background .4s,color .4s;
+  font-family:Arial,sans-serif;
+  transition:background .3s,color .3s;
   overflow-x:hidden;
 }
 body:before {
@@ -43,357 +42,289 @@ body:before {
     radial-gradient(ellipse at 5% 20%,transparent 0 70px,#9aa9b0 72px 76px,transparent 79px),
     radial-gradient(ellipse at 95% 75%,transparent 0 100px,#9aa9b0 102px 106px,transparent 109px);
 }
-a { color:inherit; text-decoration:none; }
-button { font:inherit; cursor:pointer; }
-
+a {text-decoration:none;color:inherit}
+button {font:inherit;cursor:pointer}
 header {
-  position:sticky;
-  top:0;
-  z-index:10;
+  position:sticky;top:0;z-index:10;
   background:var(--bg);
   border-bottom:1px solid #00ff8040;
-  padding:12px 5%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
+  padding:13px 5%;
+  display:flex;align-items:center;
+  justify-content:space-between;gap:12px;
 }
-.brand {
-  font-size:19px;
-  font-weight:900;
-  letter-spacing:1px;
-}
-.brand span { color:var(--green); }
-.header-actions { display:flex; gap:8px; }
+.brand {font-size:20px;font-weight:900}
+.brand span {color:var(--green)}
 .theme-btn {
   border:1px solid var(--green);
-  background:var(--panel);
-  color:var(--text);
-  padding:9px 12px;
-  border-radius:10px;
+  background:var(--panel);color:var(--text);
+  padding:9px 12px;border-radius:10px;
 }
 .hero {
   text-align:center;
   padding:45px 18px 35px;
-  max-width:900px;
-  margin:auto;
+  max-width:900px;margin:auto;
 }
 .logo-wrap {
-  width:170px;
-  height:170px;
-  margin:0 auto 15px;
-  display:grid;
-  place-items:center;
+  width:170px;height:170px;
+  margin:0 auto 18px;
+  display:grid;place-items:center;
   position:relative;
 }
 .logo-wrap:before {
-  content:"";
-  position:absolute;
-  inset:4px;
-  border:2px solid var(--green);
-  border-radius:50%;
+  content:"";position:absolute;inset:4px;
+  border:2px solid var(--green);border-radius:50%;
   box-shadow:0 0 18px var(--green),inset 0 0 18px #00ff8030;
   animation:spin 9s linear infinite;
 }
 .logo-wrap:after {
-  content:"";
-  position:absolute;
-  inset:-5px;
-  border:2px dashed var(--red);
-  border-radius:50%;
+  content:"";position:absolute;inset:-5px;
+  border:2px dashed var(--red);border-radius:50%;
   animation:spin 14s linear infinite reverse;
 }
 .mask {
-  width:125px;
-  height:125px;
+  width:125px;height:125px;
   animation:float 2.6s ease-in-out infinite;
   filter:drop-shadow(0 0 8px #00ff80);
 }
-.mask path, .mask ellipse, .mask circle, .mask line {
-  vector-effect:non-scaling-stroke;
-}
-@keyframes spin { to { transform:rotate(360deg); } }
+@keyframes spin {to{transform:rotate(360deg)}}
 @keyframes float {
-  0%,100% { transform:translateY(0) rotate(-3deg); }
-  50% { transform:translateY(-10px) rotate(3deg); }
+  0%,100%{transform:translateY(0) rotate(-3deg)}
+  50%{transform:translateY(-10px) rotate(3deg)}
 }
 h1 {
   font-size:clamp(28px,6vw,48px);
-  margin:15px 0 8px;
-  font-weight:950;
+  margin:15px 0 8px;font-weight:950;
 }
-h1 span {
-  color:var(--green);
-  text-shadow:0 0 14px #00ff8055;
-}
-.blink {
-  animation:blink 1.2s steps(2,start) infinite;
-}
-@keyframes blink { to { color:var(--red); } }
-.subtitle {
-  color:var(--muted);
-  line-height:1.7;
-  max-width:650px;
-  margin:12px auto 22px;
-}
+h1 span {color:var(--green);text-shadow:0 0 14px #00ff8055}
+.blink {animation:blink 1.2s steps(2,start) infinite}
+@keyframes blink {to{color:var(--red)}}
 .status {
-  display:inline-flex;
-  gap:8px;
-  align-items:center;
-  padding:9px 13px;
-  border:1px solid #00ff8050;
-  border-radius:30px;
-  font-size:12px;
-  color:var(--green);
+  display:inline-flex;gap:8px;align-items:center;
+  padding:9px 13px;border:1px solid #00ff8050;
+  border-radius:30px;font-size:12px;color:var(--green);
 }
 .status i {
   width:8px;height:8px;border-radius:50%;
-  background:var(--green);
-  box-shadow:0 0 10px var(--green);
+  background:var(--green);box-shadow:0 0 10px var(--green);
+}
+
+/* KOTAK DESKRIPSI MERAH NEON */
+.info-box {
+  max-width:650px;
+  margin:20px auto;
+  padding:18px 20px;
+  background:rgba(255,30,45,.08);
+  border:2px solid var(--red);
+  border-radius:12px;
+  box-shadow:0 0 12px rgba(255,48,60,.35),
+             inset 0 0 12px rgba(255,48,60,.08);
+  position:relative;
+  animation:redGlow 2s ease-in-out infinite alternate;
+}
+.info-box p {
+  color:var(--text);
+  line-height:1.8;
+  font-size:15px;
+  margin:0;
+  text-align:center;
+}
+@keyframes redGlow {
+  from {box-shadow:0 0 6px #ff303c50,inset 0 0 8px #ff303c10}
+  to {box-shadow:0 0 20px #ff303c70,inset 0 0 15px #ff303c20}
 }
 .btn {
-  display:inline-block;
-  border:0;
-  border-radius:10px;
-  padding:13px 18px;
-  font-weight:bold;
-  transition:.2s;
+  display:inline-block;border:0;border-radius:10px;
+  padding:13px 18px;font-weight:bold;transition:.2s;
 }
-.btn:hover { transform:translateY(-3px); }
-.btn-green { background:var(--green);color:#06130b; }
-.btn-outline {
-  border:1px solid var(--red);
-  color:var(--text);
-  background:transparent;
-}
+.btn:hover {transform:translateY(-3px)}
+.btn-green {background:var(--green);color:#06130b}
+.btn-outline {border:1px solid var(--red);color:var(--text);background:transparent}
 .buttons {
-  display:flex;justify-content:center;gap:10px;flex-wrap:wrap;
-  margin-top:20px;
+  display:flex;justify-content:center;gap:10px;
+  flex-wrap:wrap;margin-top:20px;
 }
 .clock {
-  display:inline-block;
-  margin-top:22px;
-  border:1px solid #00ff8050;
-  background:var(--panel);
-  border-radius:10px;
-  padding:10px 16px;
-  min-width:210px;
+  display:inline-block;margin-top:22px;
+  border:1px solid #00ff8050;background:var(--panel);
+  border-radius:10px;padding:10px 16px;min-width:210px;
 }
 .clock strong {
   display:block;color:var(--green);font-size:20px;
   font-variant-numeric:tabular-nums;
 }
-.clock small { color:var(--muted); }
-
-section {
-  padding:32px 18px;
-  max-width:1050px;
-  margin:auto;
-}
-.section-title { text-align:center;margin-bottom:25px; }
-.section-title h2 { font-size:27px;margin:0 0 8px; }
-.section-title p { color:var(--muted);font-size:14px; }
+.clock small {color:var(--muted)}
+section {padding:32px 18px;max-width:1050px;margin:auto}
+.section-title {text-align:center;margin-bottom:25px}
+.section-title h2 {font-size:27px;margin:0 0 8px}
+.section-title p {color:var(--muted);font-size:14px}
 .grid {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:15px;
 }
 .card {
-  padding:20px;
-  border:1px solid #71818b45;
-  border-radius:16px;
-  background:var(--panel);
-  transition:.25s;
+  padding:20px;border:1px solid #71818b45;
+  border-radius:16px;background:var(--panel);transition:.25s;
 }
 .card:hover {
-  transform:translateY(-5px);
-  border-color:var(--green);
+  transform:translateY(-5px);border-color:var(--green);
   box-shadow:0 0 18px #00ff8015;
 }
-.card .emoji { font-size:32px; }
-.card h3 { margin:12px 0 8px; }
-.card p {
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.6;
-  min-height:43px;
-}
-.card .btn { width:100%;text-align:center;margin-top:8px; }
+.emoji {font-size:32px}
+.card h3 {margin:12px 0 8px}
+.card p {color:var(--muted);font-size:14px;line-height:1.6;min-height:43px}
+.card .btn {width:100%;text-align:center;margin-top:8px}
 .info {
-  background:var(--panel);
-  border:1px solid #00ff8040;
-  border-radius:15px;
-  padding:22px;
-  line-height:1.8;
+  background:var(--panel);border:1px solid #00ff8040;
+  border-radius:15px;padding:22px;line-height:1.8;
 }
-.info li { margin:8px 0; }
+.info li {margin:8px 0}
 footer {
-  text-align:center;
-  padding:28px 16px;
-  border-top:1px solid #00ff8030;
-  color:var(--muted);
-  font-size:13px;
+  text-align:center;padding:28px 16px;
+  border-top:1px solid #00ff8030;color:var(--muted);font-size:13px;
 }
-footer strong { color:var(--green); }
+footer strong {color:var(--green)}
 .wa-float {
-  position:fixed;
-  bottom:20px;
-  right:18px;
-  z-index:20;
-  padding:14px 17px;
-  border-radius:40px;
-  color:white;
-  background:#16b85a;
-  box-shadow:0 0 18px #16b85a60;
-  font-weight:bold;
+  position:fixed;bottom:20px;right:18px;z-index:20;
+  padding:14px 17px;border-radius:40px;color:white;
+  background:#16b85a;box-shadow:0 0 18px #16b85a60;font-weight:bold;
+}
+@media(max-width:400px) {
+  .logo-wrap {width:145px;height:145px}
+  .mask {width:110px;height:110px}
+  .info-box {padding:15px}
 }
 </style>
 </head>
-
 <body>
 <header>
   <div class="brand">X-ONE<span>32</span></div>
-  <div class="header-actions">
-    <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">
-      ☀️ Mode siang
-    </button>
-  </div>
+  <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">☀️ Mode siang</button>
 </header>
 
 <main>
-  <div class="hero" id="home">
-    <div class="logo-wrap" aria-label="Logo topeng Anonymous animasi">
-      <!-- Topeng Anonymous dibuat langsung dengan SVG -->
-      <svg class="mask" viewBox="0 0 160 160"
-           xmlns="http://www.w3.org/2000/svg" role="img"
-           aria-label="Topeng Anonymous">
-        <defs>
-          <linearGradient id="face" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#ffffff"/>
-            <stop offset="1" stop-color="#b8c8ca"/>
-          </linearGradient>
-        </defs>
-        <path d="M35 28 Q80 8 125 28 L119 88
-                 Q112 125 80 146 Q48 125 41 88 Z"
-              fill="url(#face)" stroke="#00ff80" stroke-width="2.5"/>
-        <path d="M39 59 L72 66 L57 79 L38 75 Z" fill="#10191d"/>
-        <path d="M121 59 L88 66 L103 79 L122 75 Z" fill="#10191d"/>
-        <path d="M80 63 L72 92 L84 96 L92 91"
-              fill="none" stroke="#526268" stroke-width="3"
-              stroke-linecap="round"/>
-        <path d="M47 99 Q61 91 74 100 Q80 106 86 100
-                 Q99 91 113 99 Q104 117 80 115 Q56 117 47 99Z"
-              fill="#202b30"/>
-        <path d="M58 123 Q80 132 102 123 L80 150 Z"
-              fill="#dce4e4"/>
-        <path d="M55 41 Q80 32 105 41"
-              fill="none" stroke="#ff303c" stroke-width="3"
-              stroke-linecap="round"/>
-        <path d="M44 86 L29 91 M116 86 L131 91"
-              stroke="#00ff80" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </div>
+<div class="hero" id="home">
+  <div class="logo-wrap">
+    <svg class="mask" viewBox="0 0 160 160"
+         xmlns="http://www.w3.org/2000/svg" role="img"
+         aria-label="Topeng Anonymous">
+      <defs>
+        <linearGradient id="face" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#fff"/>
+          <stop offset="1" stop-color="#b8c8ca"/>
+        </linearGradient>
+      </defs>
+      <path d="M35 28 Q80 8 125 28 L119 88 Q112 125 80 146 Q48 125 41 88 Z"
+            fill="url(#face)" stroke="#00ff80" stroke-width="2.5"/>
+      <path d="M39 59 L72 66 L57 79 L38 75 Z" fill="#10191d"/>
+      <path d="M121 59 L88 66 L103 79 L122 75 Z" fill="#10191d"/>
+      <path d="M80 63 L72 92 L84 96 L92 91"
+            fill="none" stroke="#526268" stroke-width="3" stroke-linecap="round"/>
+      <path d="M47 99 Q61 91 74 100 Q80 106 86 100 Q99 91 113 99 Q104 117 80 115 Q56 117 47 99Z"
+            fill="#202b30"/>
+      <path d="M58 123 Q80 132 102 123 L80 150 Z" fill="#dce4e4"/>
+      <path d="M55 41 Q80 32 105 41"
+            fill="none" stroke="#ff303c" stroke-width="3" stroke-linecap="round"/>
+      <path d="M44 86 L29 91 M116 86 L131 91"
+            stroke="#00ff80" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </div>
 
-    <div class="status"><i></i> ROOT • ANDROID • CUSTOM ROM</div>
-    <h1><span>X-ONE32</span> <span class="blink">ROOT</span></h1>
-    <h2>ANDROID &amp; CUSTOM ROM</h2>
-    <p class="subtitle">
+  <div class="status"><i></i> ROOT • ANDROID • CUSTOM ROM</div>
+  <h1><span>X-ONE32</span> <span class="blink">ROOT</span></h1>
+  <h2>ANDROID &amp; CUSTOM ROM</h2>
+
+  <!-- DESKRIPSI DALAM KOTAK MERAH -->
+  <div class="info-box">
+    <p>
       Pusat informasi dan layanan modifikasi Android.
       Konsultasi root, Magisk, custom ROM, bootloader,
       dan bantuan perangkat Android.
     </p>
-
-    <div class="buttons">
-      <a class="btn btn-green" href="#layanan">⚡ Lihat Layanan</a>
-      <a class="btn btn-outline"
-         href="https://wa.me/6287841082704?text=Halo%20X-ONE32%2C%20saya%20ingin%20konsultasi%20Android">
-        💬 Hubungi Admin
-      </a>
-    </div>
-
-    <div class="clock">
-      <strong id="time">00:00:00</strong>
-      <small id="date">Memuat tanggal...</small>
-    </div>
   </div>
 
-  <section id="layanan">
-    <div class="section-title">
-      <h2>⚡ Layanan Kami</h2>
-      <p>Pilih layanan dan hubungi admin melalui WhatsApp.</p>
-    </div>
+  <div class="buttons">
+    <a class="btn btn-green" href="#layanan"> Lihat Layanan</a>
+    <a class="btn btn-outline"
+       href="https://wa.me/6287841082704?text=Halo%20X-ONE32%2C%20saya%20ingin%20konsultasi%20Android">
+       💬 Hubungi Admin
+    </a>
+  </div>
 
-    <div class="grid">
-      <article class="card">
-        <div class="emoji">📱</div>
-        <h3>Root Android</h3>
-        <p>Konsultasi root perangkat Android dan kompatibilitas perangkat.</p>
-        <button class="btn btn-green" onclick="order('Root Android')">Pesan Sekarang</button>
-      </article>
+  <div class="clock">
+    <strong id="time">00:00:00</strong>
+    <small id="date">Memuat tanggal...</small>
+  </div>
+</div>
 
-      <article class="card">
-        <div class="emoji">🛠️</div>
-        <h3>Custom ROM</h3>
-        <p>Bantuan instalasi ROM kustom sesuai model dan dukungan perangkat.</p>
-        <button class="btn btn-green" onclick="order('Custom ROM')">Pesan Sekarang</button>
-      </article>
+<section id="layanan">
+  <div class="section-title">
+    <h2> Layanan Kami</h2>
+    <p>Pilih layanan dan hubungi admin melalui WhatsApp.</p>
+  </div>
+  <div class="grid">
+    <article class="card">
+      <div class="emoji">📱</div>
+      <h3>Root Android</h3>
+      <p>Konsultasi root dan kompatibilitas perangkat Android.</p>
+      <button class="btn btn-green" onclick="order('Root Android')">Pesan Sekarang</button>
+    </article>
+    <article class="card">
+      <div class="emoji">🛠️</div>
+      <h3>Custom ROM</h3>
+      <p>Bantuan instalasi ROM kustom sesuai model perangkat.</p>
+      <button class="btn btn-green" onclick="order('Custom ROM')">Pesan Sekarang</button>
+    </article>
+    <article class="card">
+      <div class="emoji">🔓</div>
+      <h3>Unlock Bootloader</h3>
+      <p>Konsultasi persiapan unlock bootloader.</p>
+      <button class="btn btn-green" onclick="order('Unlock Bootloader')">Pesan Sekarang</button>
+    </article>
+    <article class="card">
+      <div class="emoji">🧩</div>
+      <h3>Magisk Module</h3>
+      <p>Bantuan modul Magisk dan pemeriksaan kompatibilitas.</p>
+      <button class="btn btn-green" onclick="order('Magisk Module')">Pesan Sekarang</button>
+    </article>
+    <article class="card">
+      <div class="emoji">🔧</div>
+      <h3>Flashing HP</h3>
+      <p>Konsultasi firmware dan penanganan perangkat.</p>
+      <button class="btn btn-green" onclick="order('Flashing HP')">Pesan Sekarang</button>
+    </article>
+    <article class="card">
+      <div class="emoji">💻</div>
+      <h3>Konsultasi Android</h3>
+      <p>Bantuan kendala sistem dan modifikasi Android.</p>
+      <button class="btn btn-green" onclick="order('Konsultasi Android')">Pesan Sekarang</button>
+    </article>
+  </div>
+</section>
 
-      <article class="card">
-        <div class="emoji">🔓</div>
-        <h3>Unlock Bootloader</h3>
-        <p>Konsultasi persiapan unlock bootloader sesuai prosedur perangkat.</p>
-        <button class="btn btn-green" onclick="order('Unlock Bootloader')">Pesan Sekarang</button>
-      </article>
+<section>
+  <div class="section-title"><h2>⚠️ Informasi Penting</h2></div>
+  <div class="info">
+    <ul>
+      <li>Pastikan tipe dan model HP benar sebelum memesan.</li>
+      <li>Root dan flashing dapat menghapus data atau memengaruhi garansi.</li>
+      <li>Cadangkan data penting sebelum modifikasi perangkat.</li>
+      <li>Layanan dilakukan dengan izin pemilik perangkat.</li>
+    </ul>
+  </div>
+</section>
 
-      <article class="card">
-        <div class="emoji">🧩</div>
-        <h3>Magisk Module</h3>
-        <p>Bantuan modul Magisk, pemasangan, dan pemeriksaan kompatibilitas.</p>
-        <button class="btn btn-green" onclick="order('Magisk Module')">Pesan Sekarang</button>
-      </article>
-
-      <article class="card">
-        <div class="emoji">🔧</div>
-        <h3>Flashing HP</h3>
-        <p>Konsultasi firmware dan penanganan perangkat sesuai model HP.</p>
-        <button class="btn btn-green" onclick="order('Flashing HP')">Pesan Sekarang</button>
-      </article>
-
-      <article class="card">
-        <div class="emoji">💻</div>
-        <h3>Konsultasi Android</h3>
-        <p>Bantuan kendala sistem, optimasi, dan modifikasi Android.</p>
-        <button class="btn btn-green" onclick="order('Konsultasi Android')">Pesan Sekarang</button>
-      </article>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-title">
-      <h2>⚠️ Informasi Penting</h2>
-    </div>
-    <div class="info">
-      <ul>
-        <li>Pastikan tipe dan model HP benar sebelum memesan.</li>
-        <li>Root, flashing, dan unlock bootloader dapat menghapus data atau memengaruhi garansi.</li>
-        <li>Cadangkan data penting sebelum modifikasi perangkat.</li>
-        <li>Layanan dilakukan dengan izin pemilik perangkat.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="kontak">
-    <div class="section-title">
-      <h2>💬 Kontak Admin</h2>
-      <p>Klik tombol berikut untuk memulai percakapan WhatsApp.</p>
-    </div>
-    <div class="buttons">
-      <a class="btn btn-green"
-         href="https://wa.me/6287841082704?text=Halo%20Admin%20X-ONE32">
-        Hubungi WhatsApp Admin
-      </a>
-    </div>
-  </section>
+<section id="kontak">
+  <div class="section-title">
+    <h2>💬 Kontak Admin</h2>
+    <p>Hubungi admin untuk informasi layanan.</p>
+  </div>
+  <div class="buttons">
+    <a class="btn btn-green" href="https://wa.me/6287841082704?text=Halo%20Admin%20X-ONE32">
+      Hubungi WhatsApp Admin
+    </a>
+  </div>
+</section>
 </main>
 
 <footer>
@@ -401,16 +332,15 @@ footer strong { color:var(--green); }
   <p>© <span id="year"></span> X-ONE32. All rights reserved.</p>
 </footer>
 
-<a class="wa-float"
-   href="https://wa.me/6287841082704?text=Halo%20Admin%20X-ONE32"
-   aria-label="Chat WhatsApp admin">WhatsApp</a>
+<a class="wa-float" href="https://wa.me/6287841082704?text=Halo%20Admin%20X-ONE32">
+  WhatsApp
+</a>
 
 <script>
 const ADMIN = "6287841082704";
 
 function order(service) {
-  const message =
-    "Halo Admin X-ONE32, saya ingin memesan layanan: " +
+  const message = "Halo Admin X-ONE32, saya ingin memesan layanan: " +
     service + ". Mohon informasi lebih lanjut.";
   window.open(
     "https://wa.me/" + ADMIN + "?text=" + encodeURIComponent(message),
@@ -431,23 +361,16 @@ function updateClock() {
   const now = new Date();
   document.getElementById("time").textContent =
     now.toLocaleTimeString("id-ID", {
-      hour12:false,
-      hour:"2-digit",
-      minute:"2-digit",
-      second:"2-digit"
+      hour12:false, hour:"2-digit", minute:"2-digit", second:"2-digit"
     });
   document.getElementById("date").textContent =
     now.toLocaleDateString("id-ID", {
-      weekday:"long",
-      day:"numeric",
-      month:"long",
-      year:"numeric"
+      weekday:"long", day:"numeric", month:"long", year:"numeric"
     });
   document.getElementById("year").textContent = now.getFullYear();
 }
-
 updateClock();
-setInterval(updateClock, 1000);
+setInterval(updateClock,1000);
 </script>
 </body>
 </html>
