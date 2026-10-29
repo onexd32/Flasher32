@@ -1,376 +1,442 @@
 
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080d12">
-<title>X-ONE32 | ROOT ANDROID</title>
+<title>MVN TECH | Custom ROM & Flashing HP</title>
+
 <style>
 :root {
-  --bg:#080d12;
-  --panel:#111a22;
-  --text:#f2f7fa;
-  --green:#00ff80;
-  --red:#ff303c;
-  --muted:#a9bac6;
-}
-body.light {
-  --bg:#eef5f3;
-  --panel:#fff;
-  --text:#15221e;
-  --muted:#566861;
-}
-* {box-sizing:border-box}
-html {scroll-behavior:smooth}
-body {
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:Arial,sans-serif;
-  transition:background .3s,color .3s;
-  overflow-x:hidden;
-}
-body:before {
-  content:"";
-  position:fixed;
-  inset:0;
-  z-index:-1;
-  pointer-events:none;
-  opacity:.17;
-  background:
-    radial-gradient(ellipse at 5% 20%,transparent 0 70px,#9aa9b0 72px 76px,transparent 79px),
-    radial-gradient(ellipse at 95% 75%,transparent 0 100px,#9aa9b0 102px 106px,transparent 109px);
-}
-a {text-decoration:none;color:inherit}
-button {font:inherit;cursor:pointer}
-header {
-  position:sticky;top:0;z-index:10;
-  background:var(--bg);
-  border-bottom:1px solid #00ff8040;
-  padding:13px 5%;
-  display:flex;align-items:center;
-  justify-content:space-between;gap:12px;
-}
-.brand {font-size:20px;font-weight:900}
-.brand span {color:var(--green)}
-.theme-btn {
-  border:1px solid var(--green);
-  background:var(--panel);color:var(--text);
-  padding:9px 12px;border-radius:10px;
-}
-.hero {
-  text-align:center;
-  padding:45px 18px 35px;
-  max-width:900px;margin:auto;
-}
-.logo-wrap {
-  width:170px;height:170px;
-  margin:0 auto 18px;
-  display:grid;place-items:center;
-  position:relative;
-}
-.logo-wrap:before {
-  content:"";position:absolute;inset:4px;
-  border:2px solid var(--green);border-radius:50%;
-  box-shadow:0 0 18px var(--green),inset 0 0 18px #00ff8030;
-  animation:spin 9s linear infinite;
-}
-.logo-wrap:after {
-  content:"";position:absolute;inset:-5px;
-  border:2px dashed var(--red);border-radius:50%;
-  animation:spin 14s linear infinite reverse;
-}
-.mask {
-  width:125px;height:125px;
-  animation:float 2.6s ease-in-out infinite;
-  filter:drop-shadow(0 0 8px #00ff80);
-}
-@keyframes spin {to{transform:rotate(360deg)}}
-@keyframes float {
-  0%,100%{transform:translateY(0) rotate(-3deg)}
-  50%{transform:translateY(-10px) rotate(3deg)}
-}
-h1 {
-  font-size:clamp(28px,6vw,48px);
-  margin:15px 0 8px;font-weight:950;
-}
-h1 span {color:var(--green);text-shadow:0 0 14px #00ff8055}
-.blink {animation:blink 1.2s steps(2,start) infinite}
-@keyframes blink {to{color:var(--red)}}
-.status {
-  display:inline-flex;gap:8px;align-items:center;
-  padding:9px 13px;border:1px solid #00ff8050;
-  border-radius:30px;font-size:12px;color:var(--green);
-}
-.status i {
-  width:8px;height:8px;border-radius:50%;
-  background:var(--green);box-shadow:0 0 10px var(--green);
+  --bg: #050d18;
+  --panel: #0b1e30;
+  --text: #effcff;
+  --muted: #b9d9e6;
+  --cyan: #65f5ff;
+  --blue: #167dff;
 }
 
-/* KOTAK DESKRIPSI MERAH NEON */
-.info-box {
-  max-width:650px;
-  margin:20px auto;
-  padding:18px 20px;
-  background:rgba(255,30,45,.08);
-  border:2px solid var(--red);
-  border-radius:12px;
-  box-shadow:0 0 12px rgba(255,48,60,.35),
-             inset 0 0 12px rgba(255,48,60,.08);
-  position:relative;
-  animation:redGlow 2s ease-in-out infinite alternate;
+* {
+  box-sizing: border-box;
 }
-.info-box p {
-  color:var(--text);
-  line-height:1.8;
-  font-size:15px;
-  margin:0;
-  text-align:center;
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at top, #17445a, transparent 65%),
+    var(--bg);
+  transition: background .3s, color .3s;
 }
-@keyframes redGlow {
-  from {box-shadow:0 0 6px #ff303c50,inset 0 0 8px #ff303c10}
-  to {box-shadow:0 0 20px #ff303c70,inset 0 0 15px #ff303c20}
+
+body.light {
+  --bg: #eaf8ff;
+  --panel: #ffffff;
+  --text: #092337;
+  --muted: #31566a;
+  --cyan: #008fc5;
+  --blue: #0878ee;
+  background: linear-gradient(#d5f4ff, #f7fcff);
 }
-.btn {
-  display:inline-block;border:0;border-radius:10px;
-  padding:13px 18px;font-weight:bold;transition:.2s;
+
+.container {
+  width: 92%;
+  max-width: 850px;
+  margin: auto;
+  padding: 20px 0 35px;
 }
-.btn:hover {transform:translateY(-3px)}
-.btn-green {background:var(--green);color:#06130b}
-.btn-outline {border:1px solid var(--red);color:var(--text);background:transparent}
-.buttons {
-  display:flex;justify-content:center;gap:10px;
-  flex-wrap:wrap;margin-top:20px;
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--cyan);
 }
+
+.online {
+  color: #64ff9a;
+}
+
+.tools {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0 12px;
+}
+
 .clock {
-  display:inline-block;margin-top:22px;
-  border:1px solid #00ff8050;background:var(--panel);
-  border-radius:10px;padding:10px 16px;min-width:210px;
+  border: 1px solid var(--cyan);
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 8px 14px;
+  min-width: 175px;
+  text-align: center;
+  box-shadow: 0 0 12px #168dff30;
+  font-size: 12px;
+  line-height: 1.6;
 }
+
 .clock strong {
-  display:block;color:var(--green);font-size:20px;
-  font-variant-numeric:tabular-nums;
+  display: block;
+  font-size: 17px;
+  color: var(--cyan);
 }
-.clock small {color:var(--muted)}
-section {padding:32px 18px;max-width:1050px;margin:auto}
-.section-title {text-align:center;margin-bottom:25px}
-.section-title h2 {font-size:27px;margin:0 0 8px}
-.section-title p {color:var(--muted);font-size:14px}
-.grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:15px;
+
+.theme-btn {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--cyan);
+  border-radius: 8px;
+  padding: 11px 14px;
+  cursor: pointer;
 }
+
+.ticker {
+  border: 1px solid #168dff;
+  border-radius: 7px;
+  background: linear-gradient(90deg,#061a35,#064b91,#061a35);
+  color: #70d9ff;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 9px 0;
+  box-shadow: 0 0 14px #007dff30;
+}
+
+.ticker span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: jalan 15s linear infinite;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+@keyframes jalan {
+  to { transform: translateX(-100%); }
+}
+
+.hero {
+  text-align: center;
+  padding: 25px 0;
+}
+
+.logo {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+  margin: auto;
+  filter: drop-shadow(0 0 12px #20dfff70);
+}
+
+.logo-fallback {
+  font-size: clamp(65px, 18vw, 125px);
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -7px;
+  color: #4deaff;
+  text-shadow:
+    0 0 8px #00cfff,
+    0 0 25px #007bff,
+    4px 5px 0 #063c91;
+}
+
+h1 {
+  font-size: clamp(25px, 6vw, 42px);
+  letter-spacing: 3px;
+  text-shadow: 0 0 15px #00bfff;
+  margin: 16px 0 8px;
+}
+
+.subtitle {
+  color: var(--muted);
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+
+.line {
+  height: 2px;
+  width: 220px;
+  max-width: 80%;
+  margin: 22px auto;
+  background: linear-gradient(90deg,transparent,var(--cyan),var(--blue),transparent);
+  box-shadow: 0 0 12px var(--cyan);
+}
+
+.intro {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.section-title {
+  text-align: center;
+  color: var(--cyan);
+  letter-spacing: 3px;
+  font-size: 16px;
+  margin: 15px 0 20px;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
 .card {
-  padding:20px;border:1px solid #71818b45;
-  border-radius:16px;background:var(--panel);transition:.25s;
+  background: linear-gradient(145deg,var(--panel),#0b263a);
+  border: 1px solid var(--cyan);
+  border-radius: 15px;
+  padding: 23px 17px;
+  text-align: center;
+  box-shadow: 0 0 18px #00bfff20;
+  transition: .25s;
 }
+
+body.light .card {
+  background: white;
+}
+
 .card:hover {
-  transform:translateY(-5px);border-color:var(--green);
-  box-shadow:0 0 18px #00ff8015;
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px #00cfff50;
 }
-.emoji {font-size:32px}
-.card h3 {margin:12px 0 8px}
-.card p {color:var(--muted);font-size:14px;line-height:1.6;min-height:43px}
-.card .btn {width:100%;text-align:center;margin-top:8px}
-.info {
-  background:var(--panel);border:1px solid #00ff8040;
-  border-radius:15px;padding:22px;line-height:1.8;
+
+.icon {
+  font-size: 42px;
 }
-.info li {margin:8px 0}
+
+.card h2 {
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+  min-height: 65px;
+}
+
+.btn {
+  display: block;
+  padding: 13px 8px;
+  border-radius: 8px;
+  background: linear-gradient(100deg,#65f5ff,#1684ff);
+  color: #031322;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 12px;
+  box-shadow: 0 0 14px #00bfff35;
+}
+
+.btn:hover {
+  filter: brightness(1.15);
+}
+
+.admin {
+  display: block;
+  max-width: 380px;
+  margin: 24px auto;
+  padding: 16px;
+  text-align: center;
+  border: 1px solid #52ff9b;
+  border-radius: 10px;
+  background: linear-gradient(100deg,#087e51,#13bb70);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 1.7;
+  box-shadow: 0 0 20px #2aff9125;
+}
+
 footer {
-  text-align:center;padding:28px 16px;
-  border-top:1px solid #00ff8030;color:var(--muted);font-size:13px;
+  text-align: center;
+  margin-top: 28px;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 1px;
 }
-footer strong {color:var(--green)}
-.wa-float {
-  position:fixed;bottom:20px;right:18px;z-index:20;
-  padding:14px 17px;border-radius:40px;color:white;
-  background:#16b85a;box-shadow:0 0 18px #16b85a60;font-weight:bold;
-}
-@media(max-width:400px) {
-  .logo-wrap {width:145px;height:145px}
-  .mask {width:110px;height:110px}
-  .info-box {padding:15px}
+
+@media (max-width: 560px) {
+  .services {
+    grid-template-columns: 1fr;
+  }
+
+  .card p {
+    min-height: auto;
+  }
+
+  .top {
+    font-size: 10px;
+  }
 }
 </style>
 </head>
+
 <body>
-<header>
-  <div class="brand">X-ONE<span>32</span></div>
-  <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">☀️ Mode siang</button>
-</header>
+<main class="container">
 
-<main>
-<div class="hero" id="home">
-  <div class="logo-wrap">
-    <svg class="mask" viewBox="0 0 160 160"
-         xmlns="http://www.w3.org/2000/svg" role="img"
-         aria-label="Topeng Anonymous">
-      <defs>
-        <linearGradient id="face" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#fff"/>
-          <stop offset="1" stop-color="#b8c8ca"/>
-        </linearGradient>
-      </defs>
-      <path d="M35 28 Q80 8 125 28 L119 88 Q112 125 80 146 Q48 125 41 88 Z"
-            fill="url(#face)" stroke="#00ff80" stroke-width="2.5"/>
-      <path d="M39 59 L72 66 L57 79 L38 75 Z" fill="#10191d"/>
-      <path d="M121 59 L88 66 L103 79 L122 75 Z" fill="#10191d"/>
-      <path d="M80 63 L72 92 L84 96 L92 91"
-            fill="none" stroke="#526268" stroke-width="3" stroke-linecap="round"/>
-      <path d="M47 99 Q61 91 74 100 Q80 106 86 100 Q99 91 113 99 Q104 117 80 115 Q56 117 47 99Z"
-            fill="#202b30"/>
-      <path d="M58 123 Q80 132 102 123 L80 150 Z" fill="#dce4e4"/>
-      <path d="M55 41 Q80 32 105 41"
-            fill="none" stroke="#ff303c" stroke-width="3" stroke-linecap="round"/>
-      <path d="M44 86 L29 91 M116 86 L131 91"
-            stroke="#00ff80" stroke-width="2" stroke-linecap="round"/>
-    </svg>
+  <div class="top">
+    <span>⌁ MVN TECH SERVICE</span>
+    <span class="online">● ONLINE</span>
   </div>
 
-  <div class="status"><i></i> ROOT • ANDROID • CUSTOM ROM</div>
-  <h1><span>X-ONE32</span> <span class="blink">ROOT</span></h1>
-  <h2>ANDROID &amp; CUSTOM ROM</h2>
+  <!-- JAM DAN TANGGAL -->
+  <div class="tools">
+    <div class="clock">
+      <strong id="jam">00:00:00</strong>
+      <span id="tanggal">Memuat tanggal...</span>
+    </div>
 
-  <!-- DESKRIPSI DALAM KOTAK MERAH -->
-  <div class="info-box">
-    <p>
-      Pusat informasi dan layanan modifikasi Android.
-      Konsultasi root, Magisk, custom ROM, bootloader,
-      dan bantuan perangkat Android.
+    <button class="theme-btn" id="themeBtn" onclick="gantiTema()">
+      ☀️ Mode Siang
+    </button>
+  </div>
+
+  <!-- TEKS BERJALAN -->
+  <div class="ticker">
+    <span>Solusi Cerdas Perbaikan HP Di MVN</span>
+  </div>
+
+  <!-- HEADER / LOGO -->
+  <header class="hero">
+
+    <!--
+      Jika ingin menggunakan gambar logo asli:
+      1. Simpan gambar logo dengan nama mvn-logo.jpg
+      2. Letakkan satu folder dengan index.html
+      3. Ganti logo-fallback di bawah dengan:
+      <img class="logo" src="mvn-logo.jpg" alt="Logo MVN">
+    -->
+
+    <div class="logo-fallback">MVN</div>
+
+    <h1>MVN TECH</h1>
+    <p class="subtitle">CUSTOM ROM • FLASHING HP</p>
+
+    <div class="line"></div>
+
+    <p class="intro">
+      Solusi oprek Android, pemasangan Custom ROM,
+      dan layanan flashing HP. Hubungi kami untuk
+      konsultasi dan pemesanan layanan.
     </p>
-  </div>
+  </header>
 
-  <div class="buttons">
-    <a class="btn btn-green" href="#layanan"> Lihat Layanan</a>
-    <a class="btn btn-outline"
-       href="https://wa.me/6287841082704?text=Halo%20X-ONE32%2C%20saya%20ingin%20konsultasi%20Android">
-       💬 Hubungi Admin
-    </a>
-  </div>
+  <!-- DAFTAR LAYANAN -->
+  <h2 class="section-title">/// PILIH LAYANAN ///</h2>
 
-  <div class="clock">
-    <strong id="time">00:00:00</strong>
-    <small id="date">Memuat tanggal...</small>
-  </div>
-</div>
+  <section class="services">
 
-<section id="layanan">
-  <div class="section-title">
-    <h2> Layanan Kami</h2>
-    <p>Pilih layanan dan hubungi admin melalui WhatsApp.</p>
-  </div>
-  <div class="grid">
     <article class="card">
-      <div class="emoji">📱</div>
-      <h3>Root Android</h3>
-      <p>Konsultasi root dan kompatibilitas perangkat Android.</p>
-      <button class="btn btn-green" onclick="order('Root Android')">Pesan Sekarang</button>
-    </article>
-    <article class="card">
-      <div class="emoji">🛠️</div>
-      <h3>Custom ROM</h3>
-      <p>Bantuan instalasi ROM kustom sesuai model perangkat.</p>
-      <button class="btn btn-green" onclick="order('Custom ROM')">Pesan Sekarang</button>
-    </article>
-    <article class="card">
-      <div class="emoji">🔓</div>
-      <h3>Unlock Bootloader</h3>
-      <p>Konsultasi persiapan unlock bootloader.</p>
-      <button class="btn btn-green" onclick="order('Unlock Bootloader')">Pesan Sekarang</button>
-    </article>
-    <article class="card">
-      <div class="emoji">🧩</div>
-      <h3>Magisk Module</h3>
-      <p>Bantuan modul Magisk dan pemeriksaan kompatibilitas.</p>
-      <button class="btn btn-green" onclick="order('Magisk Module')">Pesan Sekarang</button>
-    </article>
-    <article class="card">
-      <div class="emoji">🔧</div>
-      <h3>Flashing HP</h3>
-      <p>Konsultasi firmware dan penanganan perangkat.</p>
-      <button class="btn btn-green" onclick="order('Flashing HP')">Pesan Sekarang</button>
-    </article>
-    <article class="card">
-      <div class="emoji">💻</div>
-      <h3>Konsultasi Android</h3>
-      <p>Bantuan kendala sistem dan modifikasi Android.</p>
-      <button class="btn btn-green" onclick="order('Konsultasi Android')">Pesan Sekarang</button>
-    </article>
-  </div>
-</section>
+      <div class="icon">📱</div>
+      <h2>CUSTOM ROM HP</h2>
 
-<section>
-  <div class="section-title"><h2>⚠️ Informasi Penting</h2></div>
-  <div class="info">
-    <ul>
-      <li>Pastikan tipe dan model HP benar sebelum memesan.</li>
-      <li>Root dan flashing dapat menghapus data atau memengaruhi garansi.</li>
-      <li>Cadangkan data penting sebelum modifikasi perangkat.</li>
-      <li>Layanan dilakukan dengan izin pemilik perangkat.</li>
-    </ul>
-  </div>
-</section>
+      <p>
+        Konsultasi dan pemasangan Custom ROM
+        sesuai perangkat Android yang didukung.
+      </p>
 
-<section id="kontak">
-  <div class="section-title">
-    <h2>💬 Kontak Admin</h2>
-    <p>Hubungi admin untuk informasi layanan.</p>
-  </div>
-  <div class="buttons">
-    <a class="btn btn-green" href="https://wa.me/6287841082704?text=Halo%20Admin%20X-ONE32">
-      Hubungi WhatsApp Admin
-    </a>
-  </div>
-</section>
+      <a class="btn"
+         href="https://wa.me/6287841082704?text=Halo%20MVN%2C%20saya%20ingin%20konsultasi%20layanan%20Custom%20ROM%20HP."
+         target="_blank" rel="noopener">
+        PESAN VIA WHATSAPP ↗
+      </a>
+    </article>
+
+    <article class="card">
+      <div class="icon">⚡</div>
+      <h2>FLASHING HP</h2>
+
+      <p>
+        Layanan flashing software Android.
+        Tanyakan dukungan perangkat dan kendala HP kamu.
+      </p>
+
+      <a class="btn"
+         href="https://wa.me/6287841082704?text=Halo%20MVN%2C%20saya%20ingin%20pesan%20layanan%20Flashing%20HP."
+         target="_blank" rel="noopener">
+        PESAN VIA WHATSAPP ↗
+      </a>
+    </article>
+
+  </section>
+
+  <!-- KONTAK ADMIN -->
+  <a class="admin"
+     href="https://wa.me/6287841082704?text=Halo%20MVN%20TECH%2C%20saya%20ingin%20bertanya%20tentang%20layanan."
+     target="_blank" rel="noopener">
+    ☎ CHAT ADMIN WHATSAPP<br>
+    <span style="font-weight:normal">0878-4108-2704</span>
+  </a>
+
+  <footer>
+    © <span id="tahun"></span> MVN TECH SERVICE<br>
+    ANDROID CUSTOM & FLASHING
+  </footer>
+
 </main>
 
-<footer>
-  <p><strong>X-ONE32</strong> — ROOT ANDROID &amp; CUSTOM ROM</p>
-  <p>© <span id="year"></span> X-ONE32. All rights reserved.</p>
-</footer>
-
-<a class="wa-float" href="https://wa.me/6287841082704?text=Halo%20Admin%20X-ONE32">
-  WhatsApp
-</a>
-
 <script>
-const ADMIN = "6287841082704";
+// JAM DAN TANGGAL OTOMATIS
+function updateWaktu() {
+  const sekarang = new Date();
 
-function order(service) {
-  const message = "Halo Admin X-ONE32, saya ingin memesan layanan: " +
-    service + ". Mohon informasi lebih lanjut.";
-  window.open(
-    "https://wa.me/" + ADMIN + "?text=" + encodeURIComponent(message),
-    "_blank"
-  );
+  document.getElementById("jam").textContent =
+    sekarang.toLocaleTimeString("id-ID", {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false
+    });
+
+  document.getElementById("tanggal").textContent =
+    sekarang.toLocaleDateString("id-ID", {
+      weekday: "long",
+      day: "2-digit",
+      month: "long",
+      year: "numeric"
+    });
 }
 
-function toggleTheme() {
+updateWaktu();
+setInterval(updateWaktu, 1000);
+
+// TAHUN OTOMATIS
+document.getElementById("tahun").textContent =
+  new Date().getFullYear();
+
+// MODE SIANG DAN MALAM
+function gantiTema() {
   document.body.classList.toggle("light");
-  const light = document.body.classList.contains("light");
+
+  const siang = document.body.classList.contains("light");
+
   document.getElementById("themeBtn").textContent =
-    light ? "🌙 Mode malam" : "☀️ Mode siang";
-  document.querySelector('meta[name="theme-color"]').content =
-    light ? "#eef5f3" : "#080d12";
+    siang ? "🌙 Mode Malam" : "☀️ Mode Siang";
+
+  try {
+    localStorage.setItem("mvn-theme", siang ? "light" : "dark");
+  } catch (e) {}
 }
 
-function updateClock() {
-  const now = new Date();
-  document.getElementById("time").textContent =
-    now.toLocaleTimeString("id-ID", {
-      hour12:false, hour:"2-digit", minute:"2-digit", second:"2-digit"
-    });
-  document.getElementById("date").textContent =
-    now.toLocaleDateString("id-ID", {
-      weekday:"long", day:"numeric", month:"long", year:"numeric"
-    });
-  document.getElementById("year").textContent = now.getFullYear();
-}
-updateClock();
-setInterval(updateClock,1000);
+// MEMPERTAHANKAN TEMA TERAKHIR
+try {
+  if (localStorage.getItem("mvn-theme") === "light") {
+    document.body.classList.add("light");
+    document.getElementById("themeBtn").textContent = "🌙 Mode Malam";
+  }
+} catch (e) {}
 </script>
+
 </body>
 </html>
